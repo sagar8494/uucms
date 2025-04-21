@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Manage Profile - UUCMS</title>
+  <title>Manage Profile</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -97,7 +97,7 @@
       <div class="circle">👤</div>
       <div class="menu"></div>
 	  <p class="menu"></p>
-	  <a href="D:\uucmscr\menu.html" class="slidebar"</a>
+	  <a href="menu.html" class="slidebar"</a>
 	  </div>
   </div>
 
