@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UUCMS Sidebar Menu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #4a5d6e;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #0f2c3f;
+      color: white;
+      height: 100vh;
+      padding: 10px;
+      overflow-y: auto;
+    }
+
+    .sidebar h3 {
+      padding: 10px 15px;
+      margin: 0;
+      cursor: pointer;
+      font-size: 16px;
+      background-color: #183d52;
+      border-radius: 5px;
+    }
+
+    .submenu {
+      display: none;
+      padding-left: 20px;
+    }
+
+    .submenu a {
+      display: block;
+      padding: 5px 0;
+      color: #cfe7ff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .submenu a:hover {
+      text-decoration: underline;
+    }
+
+    .dropdown.active + .submenu {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="sidebar">
+    <h3>Home</h3>
+
+    <h3 class="dropdown">Student</h3>
+    <div class="submenu">
+      <a href="#">Student Profile</a>
+      <a href="#">Profile Edit List</a>
+      <a href="#">Scholarship</a>
+      <a href="#">Hostel Notifications</a>
+      <a href="#">Placement News</a>
+      <a href="#">Defence/Govt Recruitment</a>
+      <a href="#">Internship & Training</a>
+      <a href="#">Cultural/Sports</a>
+      <a href="#">Other Notifications</a>
+      <a href="#">Revalidate Aadhaar</a>
+      <a href="#">Bus Pass</a>
+    </div>
+
+    <h3 class="dropdown">Academics</h3>
+    <div class="submenu">
+      <a href="#">Course Registration</a>
+      <a href="#">Academic Calendar of Events</a>
+      <a href="#">View Timetable</a>
+      <a href="#">Proctor/Counsellor</a>
+    </div>
+
+    <h3 class="dropdown">Exam</h3>
+    <div class="submenu">
+      <a href="D:\uucmscr\examapplications.html">Exam Applications</a>
+      <a href="#">Student Fee Payment</a>
+      <a href="#">Transaction Details</a>
+      <a href="#">Exam Re-evaluation</a>
+      <a href="#">Rejection of Results</a>
+      <a href="#">Challenge Valuation</a>
+      <a href="#">Convocation</a>
+      <a href="#">Student Services</a>
+    </div>
+
+    <h3 class="dropdown">Reports</h3>
+    <div class="submenu">
+      <a href="#">Admission Payment</a>
+    </div>
+
+    <h3 class="dropdown">Help Desk</h3>
+    <div class="submenu">
+      <a href="#">Raise Complaint</a>
+      <a href="#">View Complaint</a>
+    </div>
+  </div>
+
+  <script>
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(drop => {
+      drop.addEventListener('click', () => {
+        drop.classList.toggle('active');
+        const submenu = drop.nextElementSibling;
+        submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+      });
+    });
+  </script>
+
+</body>
+</html>
