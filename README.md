@@ -1,119 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Manage Profile</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: Arial, sans-serif;
     }
-    .header-bar {
-      background-color: #002b5c;
+    .header {
+      background-color: #003366;
       color: white;
-      padding: 10px 15px;
+      padding: 10px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      align-items: center;
     }
-    .header-bar span {
-      font-size: 16px;
+    .menu-btn {
+      font-size: 24px;
+      cursor: pointer;
     }
-    .profile-icon {
-      display: flex;
-      align-items: center;
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #0d2c3d;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
     }
-    .profile-icon .circle {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      background-color: #00a676;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 20px;
-      margin-right: 5px;
+    .sidebar a {
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 18px;
+      color: white;
+      display: block;
     }
-    .profile-icon .menu {
-      width: 20px;
-      height: 15px;
-      background: linear-gradient(white 3px, transparent 3px) repeat-y;
-      background-size: 100% 6px;
+    .sidebar a:hover {
+      background-color: #1a4d66;
     }
-    .breadcrumb {
-      background-color: #f4f4f4;
-      padding: 8px 15px;
-      font-size: 14px;
-    }
-    .container {
-      padding: 20px;
-      text-align: center;
-    }
-    .box {
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      width: 90%;
-      max-width: 500px;
-      margin: 0 auto;
+    .main-content {
       padding: 20px;
     }
-    h2 {
-      color: #002b5c;
-      font-family: 'Comic Sans MS', cursive;
-    }
-    .revalidate-btn {
+    .btn {
       background-color: #007bff;
       color: white;
       border: none;
-      padding: 12px 25px;
-      font-size: 16px;
+      padding: 8px 16px;
       cursor: pointer;
-      margin: 20px 0;
       border-radius: 4px;
     }
     .note {
       color: red;
-      font-size: 14px;
-    }
-    .update-link {
-      margin-top: 20px;
-      display: block;
-      color: blue;
-      font-size: 16px;
-      text-decoration: none;
-    }
-    .update-link:hover {
-      text-decoration: underline;
+      font-size: 12px;
     }
   </style>
 </head>
 <body>
 
-  <div class="header-bar">
+  <div class="header">
+    <span class="menu-btn" onclick="toggleSidebar()">&#9776;</span>
     <span>uucms.karnataka.gov.in</span>
-    <div class="profile-icon">
-      <div class="circle">👤</div>
-      <div class="menu"></div>
-	  <p class="menu"></p>
-	  <a href="menu.html" class="slidebar"</a>
-	  </div>
   </div>
 
-  <div class="breadcrumb">
-    Home / <strong>Manage Profile</strong>
+  <div id="mySidebar" class="sidebar">
+    <a href="#">Home</a>
+    <a href="#">Student</a>
+    <a href="#">Academics</a>
+    <a href="#">Exam</a>
+    <a href="#">Reports</a>
+    <a href="#">Help Desk</a>
   </div>
 
-  <div class="container">
-  
-    <div class="box">
-      <h2>Manage Profile</h2>
-      <button class="revalidate-btn">Revalidate Aadhaar</button>
-      <p class="note">Note: Revalidate Aadhaar only if Name and Phone number change required</p>
-      <a href="menu.html" class="update-link">Click here for profile update</a>
-    </div>
+  <div class="main-content">
+    <h2>Manage Profile</h2>
+    <button class="btn">Revalidate Aadhaar</button>
+    <p class="note">Note: Revalidate Aadhaar only if Name and Phone number change required</p>
+    <br><br>
+    <a href="#" style="color: blue;">Click here for profile update</a>
   </div>
+
+  <script>
+    function toggleSidebar() {
+      const sidebar = document.getElementById("mySidebar");
+      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
+    }
+  </script>
 
 </body>
 </html>
