@@ -111,7 +111,7 @@
       <h2>Manage Profile</h2>
       <button class="revalidate-btn">Revalidate Aadhaar</button>
       <p class="note">Note: Revalidate Aadhaar only if Name and Phone number change required</p>
-      <a href="D:\uucmscr\menu.html" class="update-link">Click here for profile update</a>
+      <a href="menu.html" class="update-link">Click here for profile update</a>
     </div>
   </div>
 
