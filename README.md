@@ -1,95 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Manage Profile</title>
   <style>
     body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
+      background: #fff;
     }
-    .header {
+    .navbar {
       background-color: #003366;
       color: white;
-      padding: 10px;
+      padding: 10px 15px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .menu-btn {
-      font-size: 24px;
-      cursor: pointer;
-    }
-    .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      z-index: 1;
-      top: 0;
-      left: 0;
-      background-color: #0d2c3d;
-      overflow-x: hidden;
-      transition: 0.3s;
-      padding-top: 60px;
-    }
-    .sidebar a {
-      padding: 10px 20px;
-      text-decoration: none;
-      font-size: 18px;
+    .navbar a {
       color: white;
-      display: block;
+      text-decoration: none;
+      font-weight: bold;
     }
-    .sidebar a:hover {
-      background-color: #1a4d66;
-    }
-    .main-content {
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 10px;
       padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+    h2 {
+      font-family: cursive;
+      color: #003366;
+      margin-bottom: 20px;
     }
     .btn {
       background-color: #007bff;
-      color: white;
       border: none;
-      padding: 8px 16px;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
       cursor: pointer;
-      border-radius: 4px;
     }
     .note {
+      margin-top: 10px;
       color: red;
       font-size: 12px;
+    }
+    .link {
+      margin-top: 15px;
+      display: block;
+      color: blue;
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .container {
+        margin: 20px;
+        padding: 15px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="header">
-    <span class="menu-btn" onclick="toggleSidebar()">&#9776;</span>
-    <span>uucms.karnataka.gov.in</span>
+  <div class="navbar">
+    <span>uucms</span>
+    <a href="menu.html">&#9776; Menu</a>
   </div>
 
-  <div id="mySidebar" class="sidebar">
-    <a href="#">Home</a>
-    <a href="#">Student</a>
-    <a href="#">Academics</a>
-    <a href="#">Exam</a>
-    <a href="#">Reports</a>
-    <a href="#">Help Desk</a>
-  </div>
-
-  <div class="main-content">
+  <div class="container">
     <h2>Manage Profile</h2>
     <button class="btn">Revalidate Aadhaar</button>
     <p class="note">Note: Revalidate Aadhaar only if Name and Phone number change required</p>
-    <br><br>
-    <a href="#" style="color: blue;">Click here for profile update</a>
+    <a href="#" class="link">Click here for profile update</a>
   </div>
-
-  <script>
-    function toggleSidebar() {
-      const sidebar = document.getElementById("mySidebar");
-      sidebar.style.width = sidebar.style.width === "250px" ? "0" : "250px";
-    }
-  </script>
 
 </body>
 </html>
